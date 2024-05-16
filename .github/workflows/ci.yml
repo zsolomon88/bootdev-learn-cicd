@@ -21,11 +21,10 @@ jobs:
       - name: Go Tests
         run: go test ./... -cover
 
-      - name: Install gosec
-        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
-
-      - name: Gosec Checks
-        run: gosec ./...
+      - name: Run Gosec Scanner
+        uses: securego/gosec@master
+        with:
+          args: ./...
 
   style:
     name: Style
