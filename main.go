@@ -20,6 +20,9 @@ import (
 type apiConfig struct {
 	DB *database.Queries
 }
+ func unused() {
+	// unused
+ }
 
 //go:embed static/*
 var staticFiles embed.FS
